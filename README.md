@@ -1,2 +1,3 @@
 # kata3
-Практическая задача 5.1.3 Проверяемое задание «Верстка блока. JavaScript в браузере»
+github pages below 
+https://mashaserova.github.io/kata3
