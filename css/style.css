@@ -66,6 +66,10 @@
     position: absolute;
     top: 16px;
     right: 16px;
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: url("../images/pink-btn.svg");
 }
 .swiper-horizontal>.swiper-pagination-bullets {
     top: 88px;
@@ -99,20 +103,13 @@
         gap: 15px;
     }
     .show-all-btn {
-        position: relative;
         display: block;
-        padding: 10px 10px 10px 40px;
+        padding: 10px 3px 10px 40px;
         background-color: #F8F8F8;
         color: black;
-    }
-    .show-all-btn::before {
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        content: "";
-        width: 25px;
-        height: 25px;
-        background: url('../images/blue-arrows_down.svg') no-repeat;
+        width: 140px;
+        height: 40px;
+        background: url('../images/blue-arrows_down.svg') 9px 6px no-repeat;
     }
     .swiper-slide:nth-of-type(7) {
         display: none;
@@ -148,20 +145,13 @@
         gap: 15px;
     }
     .show-all-btn {
-        position: relative;
         display: block;
-        padding: 10px 10px 10px 40px;
+        padding: 10px 3px 10px 40px;
         background-color: #F8F8F8;
         color: black;
-    }
-    .show-all-btn::before {
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        content: "";
-        width: 25px;
-        height: 25px;
-        background: url('../images/blue-arrows_down.svg') no-repeat;
+        width: 140px;
+        height: 40px;
+        background: url('../images/blue-arrows_down.svg') 9px 6px no-repeat;
     }
     .swiper-slide:nth-of-type(7) {
         display: block;
