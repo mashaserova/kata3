@@ -27,38 +27,40 @@ initSwiper();
 handleResize();
 window.addEventListener('resize', handleResize);
 
-let repair = document.querySelector('.repair')
-let btn = document.querySelector('button');
-let els = document.querySelectorAll('.swiper-slide');
-let el = Array.from(els).slice(6, 11);
-if (window.matchMedia("(max-width: 1115px)").matches) {
-        btn.addEventListener('click', () => {
-        el.forEach( el => {
+const repair = document.querySelector('.repair')
+const btn = document.querySelector('button');
+const blueArrows = document.querySelector('.show-all-btn')
+const els = document.querySelectorAll('.swiper-slide');
+const el1 = Array.from(els).slice(6, 11);
+const el2 = Array.from(els).slice(8, 11);
+btn.addEventListener('click', () => {
+    if (window.matchMedia("(min-width: 768px) and (max-width: 1125px)").matches) {
+        el1.forEach( el => {
             if (el.style.display === 'block') {
                 el.style.display = 'none';
-                btn.textContent = "Показать все"
-                repair.style.height = '240px'
+                btn.textContent = "Показать все";
+                repair.style.height = '240px';
+                blueArrows.style.background = "url('../images/blue-arrows_down.svg') 9px 6px no-repeat";
             } else {
                 el.style.display = 'block';
-                btn.textContent = "Скрыть"
-                repair.style.height = '340px'
+                btn.textContent = "Скрыть";
+                repair.style.height = '440px';
+                blueArrows.style.background = "url('../images/blue-arrows_up.svg') 9px 6px no-repeat";
             } 
         });
-    });
-}
-el = Array.from(els).slice(9, 11);
-if (window.matchMedia("(min-width: 1115px)").matches) {
-        btn.addEventListener('click', () => {
-        el.forEach( el => {
+    } else if (window.matchMedia("(min-width: 1126px)").matches) {
+        el2.forEach( el => {
             if (el.style.display === 'block') {
                 el.style.display = 'none';
-                btn.textContent = "Показать все"
-                repair.style.height = '240px'
+                btn.textContent = "Показать все";
+                repair.style.height = '240px';
+                blueArrows.style.background = "url('../images/blue-arrows_down.svg') 9px 6px no-repeat";
             } else {
                 el.style.display = 'block';
-                btn.textContent = "Скрыть"
-                repair.style.height = '340px'
+                btn.textContent = "Скрыть";
+                repair.style.height = '340px';
+                blueArrows.style.background = "url('../images/blue-arrows_up.svg') 9px 6px no-repeat";
             } 
         });
-    });
-}
+    }
+});
