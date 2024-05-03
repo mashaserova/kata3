@@ -94,6 +94,9 @@
     .repair {
         height: 240px;
     }
+    .repair_bigger {
+        height: 420px;
+    }
     .swiper-container {
         display: flex;
     }
@@ -104,26 +107,49 @@
     }
     .show-all-btn {
         display: block;
-        padding: 10px 3px 10px 40px;
+        position: relative;
+        padding: 0;
         background-color: #F8F8F8;
         color: black;
         width: 140px;
         height: 40px;
-        background: url('../images/blue-arrows_down.svg') 9px 6px no-repeat;
     }
-    .swiper-slide:nth-of-type(7) {
-        display: none;
+    .show-all-btn::before {
+        position: absolute;
+        display: inline-block;
+        content: "";
+        width: 30px;
+        height: 30px;
+        top: 5px;
+        bottom: 5px;
+        right: 110px;
+        background: url('../images/blue-arrows_down.svg') 0px 0px no-repeat;
     }
-    .swiper-slide:nth-of-type(8) {
-        display: none;
+    .show-less-btn {
+        display: block;
+        position: relative;
+        padding: 0;
+        background-color: #F8F8F8;
+        color: black;
+        width: 140px;
+        height: 40px;
     }
-    .swiper-slide:nth-of-type(9) {
-        display: none;
+    .show-less-btn::before {
+        position: absolute;
+        display: inline-block;
+        content: "";
+        width: 30px;
+        height: 30px;
+        top: 0px;
+        bottom: 5px;
+        right: 110px;
+        background: url('../images/blue-arrows_down.svg') 0px 0px no-repeat;
+        transform: rotate(180deg);
     }
-    .swiper-slide:nth-of-type(10) {
-        display: none;
+    .swiper-slide {
+        display: block;
     }
-    .swiper-slide:nth-of-type(11) {
+    .swiper-slide_none {
         display: none;
     }
 }
@@ -136,6 +162,9 @@
     .repair {
         height: 240px;
     }
+    .repair_bigger {
+        height: 340px;
+    }
     .swiper-container {
         display: flex;
     }
@@ -146,26 +175,43 @@
     }
     .show-all-btn {
         display: block;
-        padding: 10px 3px 10px 40px;
+        position: relative;
+        padding: 0;
         background-color: #F8F8F8;
         color: black;
         width: 140px;
         height: 40px;
-        background: url('../images/blue-arrows_down.svg') 9px 6px no-repeat;
     }
-    .swiper-slide:nth-of-type(7) {
+    .show-all-btn::before {
+        position: absolute;
+        display: inline-block;
+        content: "";
+        width: 30px;
+        height: 30px;
+        top: 5px;
+        bottom: 5px;
+        right: 110px;
+        background: url('../images/blue-arrows_down.svg') 0px 0px no-repeat;
+    }
+    .show-less-btn {
         display: block;
+        position: relative;
+        padding: 0;
+        background-color: #F8F8F8;
+        color: black;
+        width: 140px;
+        height: 40px;
     }
-    .swiper-slide:nth-of-type(8) {
-        display: block;
-    }
-    .swiper-slide:nth-of-type(9) {
-        display: none;
-    }
-    .swiper-slide:nth-of-type(10) {
-        display: none;
-    }
-    .swiper-slide:nth-of-type(11) {
-        display: none;
+    .show-less-btn::before {
+        position: absolute;
+        display: inline-block;
+        content: "";
+        width: 30px;
+        height: 30px;
+        top: 0px;
+        bottom: 5px;
+        right: 110px;
+        background: url('../images/blue-arrows_down.svg') 0px 0px no-repeat;
+        transform: rotate(180deg);
     }
 }
