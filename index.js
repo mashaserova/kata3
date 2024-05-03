@@ -26,41 +26,56 @@ function handleResize () {
 initSwiper();
 handleResize();
 window.addEventListener('resize', handleResize);
-
-const repair = document.querySelector('.repair')
-const btn = document.querySelector('button');
-const blueArrows = document.querySelector('.show-all-btn')
-const els = document.querySelectorAll('.swiper-slide');
-const el1 = Array.from(els).slice(6, 11);
-const el2 = Array.from(els).slice(8, 11);
-btn.addEventListener('click', () => {
-    if (window.matchMedia("(min-width: 768px) and (max-width: 1125px)").matches) {
-        el1.forEach( el => {
-            if (el.style.display === 'block') {
-                el.style.display = 'none';
-                btn.textContent = "Показать все";
-                repair.style.height = '240px';
-                blueArrows.style.background = "url('../images/blue-arrows_down.svg') 9px 6px no-repeat";
-            } else {
-                el.style.display = 'block';
-                btn.textContent = "Скрыть";
-                repair.style.height = '440px';
-                blueArrows.style.background = "url('../images/blue-arrows_up.svg') 9px 6px no-repeat";
-            } 
-        });
-    } else if (window.matchMedia("(min-width: 1126px)").matches) {
-        el2.forEach( el => {
-            if (el.style.display === 'block') {
-                el.style.display = 'none';
-                btn.textContent = "Показать все";
-                repair.style.height = '240px';
-                blueArrows.style.background = "url('../images/blue-arrows_down.svg') 9px 6px no-repeat";
-            } else {
-                el.style.display = 'block';
-                btn.textContent = "Скрыть";
-                repair.style.height = '340px';
-                blueArrows.style.background = "url('../images/blue-arrows_up.svg') 9px 6px no-repeat";
-            } 
-        });
+document.addEventListener("DOMContentLoaded", function() {
+    const repair = document.querySelector('.repair')
+    const btn = document.querySelector('button');
+    const blueArrows = document.querySelector('.show-all-btn')
+    const els = document.querySelectorAll('.swiper-slide');
+    const elFirst = Array.from(els).slice(6, 11);
+    const elSecond = Array.from(els).slice(8, 11);
+    const elThird = Array.from(els).slice(6, 8);
+    if (window.matchMedia("(min-width: 1126px)").matches) {
+        elThird.forEach(el => {
+            el.classList.remove('swiper-slide_none');
+        })
     }
+    btn.addEventListener('click', () => {
+        if (window.matchMedia("(min-width: 768px) and (max-width: 1125px)").matches) {
+            btn.textContent = "Показать все";
+            elFirst.forEach( el => {
+                if (el.classList.contains('swiper-slide_none')) {
+                    btn.textContent = "Скрыть";
+                    el.classList.remove('swiper-slide_none');
+                    repair.classList.remove('repair');
+                    repair.classList.add('repair_bigger');
+                    blueArrows.classList.add('show-less-btn');
+                    blueArrows.classList.remove('show-all-btn');
+                } else {
+                    el.classList.add('swiper-slide_none');
+                    repair.classList.add('repair');
+                    repair.classList.remove('repair_bigger');
+                    blueArrows.classList.remove('show-less-btn');
+                    blueArrows.classList.add('show-all-btn');
+                } 
+            });
+        } else if (window.matchMedia("(min-width: 1126px)").matches) {
+            btn.textContent = "Показать все";
+            elSecond.forEach( el => {
+                if (el.classList.contains('swiper-slide_none')) {
+                    btn.textContent = "Скрыть";
+                    el.classList.remove('swiper-slide_none');
+                    repair.classList.remove('repair');
+                    repair.classList.add('repair_bigger');
+                    blueArrows.classList.add('show-less-btn');
+                    blueArrows.classList.remove('show-all-btn');
+                } else {
+                    el.classList.add('swiper-slide_none');
+                    repair.classList.add('repair');
+                    repair.classList.remove('repair_bigger');
+                    blueArrows.classList.remove('show-less-btn');
+                    blueArrows.classList.add('show-all-btn');
+                } 
+            });
+        }
+    });
 });
